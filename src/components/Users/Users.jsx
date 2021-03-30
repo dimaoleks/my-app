@@ -1,10 +1,16 @@
 import React from 'react';
 import s from './Users.module.css';
+import axios from "axios";
+import userPhoto from '../../assets/images/user-logo.png';
 
 let Users = (props) => {
     debugger;
     if (props.users.length === 0) {
-        props.setUsers([
+        axios.get("https://social-network.samuraijs.com/api/1.0/users")
+            .then(response => {
+                props.setUsers(response.data.items);
+            })
+        /*props.setUsers([
                 {
                     id: 1,
                     photoUrl: 'https://bodysize.org/wp-content/uploads/2018/06/Dmitry-Nagiev-300x400.jpg',
@@ -30,7 +36,7 @@ let Users = (props) => {
                     location: {city: 'Kiev', country: 'Ukraine'}
                 }
             ]
-        );
+        );*/
     }
 
     return (
@@ -39,7 +45,7 @@ let Users = (props) => {
                 props.users.map(u => <div key={u.id}>
                     <span>
                         <div>
-                            <img src={u.photoUrl} className={s.userPhoto}/>
+                            <img src={u.photos.small != null ? u.photos.small : userPhoto} className={s.userPhoto}/>
                         </div>
                         <div>
                             {u.followed
@@ -54,12 +60,12 @@ let Users = (props) => {
                     </span>
                     <span>
                         <span>
-                            <div>{u.fullName}</div>
+                            <div>{u.name}</div>
                             <div>{u.status}</div>
                         </span>
                         <span>
-                            <div>{u.location.country}</div>
-                            <div>{u.location.city}</div>
+                            <div>{"u.location.country"}</div>
+                            <div>{"u.location.city"}</div>
                         </span>
                     </span>
                 </div>)
