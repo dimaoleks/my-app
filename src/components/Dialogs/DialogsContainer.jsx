@@ -4,7 +4,6 @@ import Dialogs from "./Dialogs";
 import {connect} from "react-redux";
 
 let mapStateToProps = (state) => {
-    debugger;
     return {
         dialogsPage: state.dialogsPage
     }
