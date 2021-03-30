@@ -4,9 +4,8 @@ import * as axios from "axios";
 import userPhoto from '../../assets/images/user-logo.png';
 
 class Users extends React.Component {
-    constructor(props) {
-        super(props);
-        alert('New');
+
+    componentDidMount() {
         this.getUsers();
     }
 
