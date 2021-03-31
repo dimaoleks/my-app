@@ -1,6 +1,6 @@
 import s from './ProfileInfo.module.css';
-import Preloader from "../../../common/Preloader/Preloader";
-import React from "react";
+import Preloader from '../../../common/Preloader/Preloader';
+import React from 'react';
 
 
 const ProfileInfo = (props) => {

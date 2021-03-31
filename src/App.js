@@ -17,11 +17,11 @@ const App = (props) => {
                 {/* <Route exact path='/dialogs' component={Dialogs} />
           <Route exact path='/profile' component={Profile} /> */}
 
-                <Route exact path='/dialogs'
+                <Route path='/dialogs'
                        render={() => <DialogsContainer/>}/>
-                <Route path='/profile'
+                <Route path='/profile/:userId?'
                        render={() => <ProfileContainer/>}/>
-                <Route exact path='/users'
+                <Route path='/users'
                        render={() => <UsersContainer/>}/>
             </div>
         </div>
