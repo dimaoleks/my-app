@@ -45,7 +45,6 @@ let Users = (props) => {
                                 : <button onClick={() => {
                                     usersAPI.setFollow(u.id)
                                         .then(response => {
-                                            if (response.resultCode === 0) {
                                                 props.follow(u.id);
                                             }
                                         });
