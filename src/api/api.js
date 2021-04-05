@@ -22,5 +22,20 @@ export const usersAPI = {
     setFollow: (userId) => {
         return instance.post(`follow/${userId}`, null)
             .then(response => response.data);
+    },
+
+    setAuthMe: () => {
+        return instance.get(`auth/me`, {
+            withCredentials: true
+        })
+            .then(response => response)
+    },
+
+    setUser: (userId) => {
+        return instance.get(`profile/ ${userId}`, {
+            withCredentials: true
+        })
+            .then(response => response)
     }
+
 }
