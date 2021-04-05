@@ -24,18 +24,19 @@ export const usersAPI = {
             .then(response => response.data);
     },
 
+    getProfile: (userId) => {
+        return instance.get(`profile/${userId}`, {
+            withCredentials: true
+        })
+            .then(response => response)
+    }
+};
+
+export const authAPI = {
     setAuthMe: () => {
         return instance.get(`auth/me`, {
             withCredentials: true
         })
             .then(response => response)
-    },
-
-    setUser: (userId) => {
-        return instance.get(`profile/ ${userId}`, {
-            withCredentials: true
-        })
-            .then(response => response)
     }
-
-}
+};

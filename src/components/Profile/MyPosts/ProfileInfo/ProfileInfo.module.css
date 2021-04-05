@@ -1,3 +1,8 @@
 .descriptionBlock {
     padding: 10px;
 }
+
+.userPhoto{
+    width: 160px;
+    height: 160px;
+}

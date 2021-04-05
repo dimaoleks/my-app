@@ -43,16 +43,16 @@ export const addPostActionCreator = () => ({type: ADD_POST});
 export const setUserProfile = (profile) => ({type: SET_USER_PROFILE, profile});
 export const updateNewPostTextActionCreator = (text) => ({type: UPDATE_NEW_POST_TEXT, newText: text});
 
-export const setUser = (userId) => {
-    return (dispatch) => {
-        if (!userId) {
-            userId = 16170; //Constant is me dimaoleks
-        }
-        usersAPI.setUser(userId)
-            .then(response => {
-                dispatch(setUserProfile(response.data));
-            });
-    }
+export const getUserProfile = (userId) => (dispatch) => {
+    // if (!userId) {
+    //     userId = 16170; //Constant is me dimaoleks
+    // }
+    userId = !userId ? 16170 : userId;
+    usersAPI.getProfile(userId)
+        .then(response => {
+            dispatch(setUserProfile(response.data));
+        });
 }
+
 
 export default profileReducer;
