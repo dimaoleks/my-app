@@ -1,4 +1,4 @@
-import s from "./ProfileInfo.module.css";
+//import s from "./ProfileInfo.module.css";
 import React from "react";
 
 class ProfileStatus extends React.Component {
@@ -6,14 +6,14 @@ class ProfileStatus extends React.Component {
         editMode: false
     };
 
-    activateEditMode() {
+    activateEditMode = () => {
         //setState is asynchronously
         this.setState({
             editMode: true
         });
     }
 
-    deactivateEditMode() {
+    deactivateEditMode = () => {
         //setState is asynchronously
         this.setState({
             editMode: false
