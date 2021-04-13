@@ -1,0 +1,9 @@
+.buttonSetting {
+    padding: 10px;
+}
+
+.inputMessage textarea {
+    width: 300px;
+    height: 70px;
+    resize: none;
+}

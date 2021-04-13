@@ -17,12 +17,3 @@
 .messages .message {
     color: white;
 }
-
-.inputMessage textarea {
-    width: 300px;
-    height: 70px;
-    resize: none;
-}
-.buttonSetting {
-    padding: 10px;
-}

@@ -16,21 +16,11 @@ let initialState = {
 const profileReducer = (state = initialState, action) => {
     switch (action.type) {
         case ADD_POST: {
-            // return {
-            //     ...state,
-            //     posts: [...state.posts, {id: 5, messages: action.newPostText, likesCount: 1}],
-            //     newPostText: ''
-            // };
-            let newPost = {
-                id: 5,
-                messages: action.newPostText,
-                likesCount: 0
-            };
             return {
                 ...state,
-                posts: [...state.posts, newPost],
+                posts: [...state.posts, {id: 5, messages: action.newPostText, likesCount: 1}],
                 newPostText: ''
-            }
+            };
         }
         case SET_USER_PROFILE: {
             return {
