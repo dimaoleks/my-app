@@ -3,6 +3,7 @@ import Preloader from '../../../common/Preloader/Preloader';
 import React from 'react';
 import userPhoto from "../../../../assets/images/user-logo.png";
 import ProfileStatus from './ProfileStatus';
+import ProfileStatusWithHooks from "./ProfileStatusWithHooks";
 
 const ProfileInfo = (props) => {
     if (!props.profile) {
@@ -18,7 +19,7 @@ const ProfileInfo = (props) => {
             <div className={s.descriptionBlock}>
                 <img className={s.userPhoto}
                      src={props.profile.photos.large != null ? props.profile.photos.large : userPhoto} alt=''/>
-                <ProfileStatus status={props.status} updateStatus={props.updateStatus}/>
+                <ProfileStatusWithHooks status={props.status} updateStatus={props.updateStatus}/>
             </div>
         </div>
     );
