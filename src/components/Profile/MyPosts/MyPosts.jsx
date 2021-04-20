@@ -7,7 +7,7 @@ import {TextArea} from "../../common/FormsControls/FormsControls";
 
 const maxLength10 = maxLengthCreator(10);
 
-const MyPosts = (props) => {
+const MyPosts = React.memo((props) => {
     let postsElements = props.posts
         .map(p => <Post message={p.messages} likesCount={p.likesCount} key={p.id}/>)
 
@@ -24,7 +24,7 @@ const MyPosts = (props) => {
             </div>
         </div>
     );
-}
+});
 
 let AddNewPostForm = (props) => {
     return (
