@@ -2,3 +2,8 @@
     width: 160px;
     height: 160px;
 }
+
+.middleOfDiv {
+    display: block;
+    margin-left: 40%;
+}
